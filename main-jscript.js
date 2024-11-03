@@ -18,9 +18,32 @@ async function loop2() {
     }
 }
 
+async function backgroundLoop(){
+    let transparency_mode = true
+    let transp = .4
+    const Widget = document.getElementById("bg-fade");
+    Widget.style.backgroundColor = `rgba(132, 194, 171, ${transp})`
+    while(true){
+        for (let x = 0; x <7; x++){
+            if(transparency_mode){
+                transp+=.1;
+            }else{
+                transp-=.1;
+            };
+
+            Widget.style.backgroundColor = `rgba(132, 194, 171, ${transp})`
+            await new Promise(resolve => setTimeout(resolve, 250)); 
+        };
+        
+        if(transparency_mode){transparency_mode=false}else{transparency_mode=true};
+    };
+}
+
 // running them both parallel
 async function runLoopsInParallel() {
-    await Promise.all([loop1(), loop2()]);
+    await Promise.all([loop1(), loop2(), backgroundLoop()]);
 }
+
+runLoopsInParallel();
 
 runLoopsInParallel();
