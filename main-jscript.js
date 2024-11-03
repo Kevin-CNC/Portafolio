@@ -45,5 +45,3 @@ async function runLoopsInParallel() {
 }
 
 runLoopsInParallel();
-
-runLoopsInParallel();
