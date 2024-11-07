@@ -19,15 +19,15 @@ body {
 }
 
 .bg-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(132, 194, 171, 0.8); 
     pointer-events: none;
-    width:100%;
-    height:220%;
+    width: 100vw;
+    height: 100vh;
     z-index: -5; 
     transition: background-color 1s ease-in-out;
 }
