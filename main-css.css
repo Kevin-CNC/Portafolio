@@ -7,7 +7,22 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     justify-items: center;
-  }
+}
+
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 #main-title{
     align-self: center;
@@ -87,6 +102,18 @@ body {
     z-index: 1000;
     opacity: 0;
     transition: all 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dashboard .widget {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .dashboard.visible {
