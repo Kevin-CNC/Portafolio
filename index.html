@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Kevin Caplescu - Upcoming Web Developer</title>
-        <meta charset="UTF-8">
-        <!-- Main CSS Package -->
-        <link rel="stylesheet" href="main-css.css">
-        <!-- Bootstrap JsDeliver package -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin's Portafolio!</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div class="container text-center mt-5">
+    <h1 class="typew" id="main-title">Kevin Caplescu</h1>
+    <p class="typew2" id="main-title">I welcome you to my portfolio website!</p>
     
-    <body id="main_body" style="background-color: rgba(132, 194, 171);">
-        <div class="bg-overlay" id="bg-fade"></div>
-        <div class="container">
-            <h1 id="title" style="font-weight: bold;" class="text-center"></h1>
-            <p id="little-title" style="font-weight: bold;" class="text-center"></p>
-            
-            <!-- Text boxes to showcase content -->
-            <div class="text-box">
-                <h2 style="font-size: 45px;">👋👋👋</h2>
-                <p>Hello!<br>I'm Kevin Caplescu, a web developer with a passion for websites, web applications & development in general.<br>I am currently studying Computer Science & Cybersecurity at university, in the UK.<br><br>For more information about how to contact me or for my CV, just scroll down!</p>
-            </div>
+    <!-- Buttons aligned in a column -->
+    <div class="d-flex flex-column align-items-center gap-5 mt-5">
+      <button class="btn btn-primary" id="showAboutMe">👋 About me 👋</button>
+      <button class="btn btn-primary" id="showSkills">💻 My Skills 💻</button>
+      <button class="btn btn-primary" id="showProjects">🛠️ My Projects 🛠️</button>
+      <button class="btn btn-primary" id="showContacts">📝 Contact Me 📝</button>
+    </div>
+  </div>
 
-            <div class="text-box">
-                <h2 style="font-size: 45px;">🖥️⌨️         Skills          ⌨️🖥️</h2>
-                <p><b>Languages: </b>HTML & CSS, JavaScript, Python, Lua, SQL<br><br><b>Frameworks: </b>Bootstrap, Flask(Backend)<br><br><b>Tools: </b>Visual Studio Code, SQLite, Canva, Pixlr</p>
-            </div>
+  <!-- Dashboard (Hidden by Default) -->
+  <div class="overlay" id="overlay"></div>
+  <div class="dashboard" id="dashboard">
+    <h2>Hello! 👋</h2>
+    <p><b>My name is Kevin, and I'm currently a university student, studying Computer Science & Cybersecurity.</b><br><br>
+    I find it entertaining to create new pieces of software and do web-development, to the point that I'd call it a proper passion of mine!<br>
+    Currently, <b>I am comfortable with both Back-end and Front-end (Call me 'Fullstacked')</b>, however I do prefer back-end.<br><br>
+    <i>Besides programming, I am also interested in light philosophy and cooking!</i>
+    </p>
+    <p id="light-text"><i>p.s: Click outside of the dashboard to close it!</i></p>
+  </div>
 
-            <div class="text-box">
-                <h2 style="font-size: 45px;">🛠️⚒️       My projects & work      🛠️⚒️</h2>
-                <p>My work varies between web development and app development, here are some of my current/favourite projects (Including websites!):<br>
-                 <a href="https://github.com/Kevin-CNC/Enc2024-Cryptography"><u>Encode 2024 Nethermind Bounty Winner for 'Best Cryptography for Society': 'Imagica, Image-Based Encryption'</u><br><br></a>
-                 <a href="https://github.com/Kevin-CNC/Python-Chatroom-Application-w-Realtime-Database"><u>2023 Computer Science School Project: Python ChatApp /w Realtime Firebase database</u><br><br></a>
-                 <a href="https://github.com/Kevin-CNC/Kevin-CNC.io"><u>This very page!</u><br><br></a>              
-                 <a href="https://github.com/Kevin-CNC?tab=repositories"><u>If you wanna look at every single project I've made, here is my GitHub!</u></a>
-                </p>
-            </div>
+  <div class="dashboard" id="skillsDashboard">
+    <h2>My Tech-Skills: 💻</h2>
+    <p><b>Front-End:</b> HTML & CSS - pure JavaScript<br><br>
+        <b>Back-End:</b> Python - Lua<br><br>
+        <b>Frameworks:</b> Flask (Python WebDev) - Bootstrap 5.3.x (Most current version)<br><br>
+        <b>Databases:</b> SQL Databases (SQLite) - Firebase RealTime Database (NoSQL)<br><br>
+        <b>Project Presentation / Graphic Designing:</b> Canva - Pixlr - Microsoft PowerPoint
+    </p>
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v37f55fe835aa1d3f6236af95c23fa834466468c2920b868f810fdf5b149e5d9f/firebase/images/lockup.svg" alt="Firebase Logo" width="100" height="110" style="margin-right: 5%;">
+    <img src="https://flask.palletsprojects.com/en/stable/_images/flask-horizontal.png" alt="Flask Logo" width="100" height="40" style="margin-right: 20px;">
+    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap Logo" width="100" height="80" style="margin-right: 20px;">
+    <img src="https://www.python.org/static/community_logos/python-logo-inkscape.svg" alt="Python Logo" width="150" height="50">
 
-            <div class="text-box">
-                <h2 style="font-size: 45px;">📱📄           Contacts & Documents            📄📱</h2>
-                <p>Here you can find all the info needed to contact / reach out to me.<br>Do not worry, <b> this will always stay updated!</b><br><br>
-                 <a style="font-size:25px" href="KevinCaplescuCV.pdf" download="KevinCaplescuCV.pdf"><u>Latest copy of my CV📄</u><br><br><a>
-                 <a href="mailto:kevincncaplescu@gmail.com"><u>Click here to write me an email (kevincncaplescu@gmail.com)!</u><br><a>
-                </p>
-            </div>
-        </div>
+    <p id="light-text"><i>p.s: Click outside of the dashboard to close it!</i></p>
+  </div>
 
-        <!-- Main JS Package -->
-        <script src="main-jscript.js"></script>
-        <!-- JavaScript Bootstrap JsDeliver package -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    </body>
-</html>
+  <div class="dashboard" id="showProjectsboard">
+    <h2>My Work: 🛠️</h2>
+    <p id="light-text"><i>Only showcasing the work I've deemed the best!</i></p>
+    <a href="https://github.com/Kevin-CNC/Enc2024-Cryptography"><b>Imagica - Image Based Encryption</b></a>
+    <p><i>A tool which uses a user-given image and a custom-made encryption algorithm, to encrypt a piece of data securely! <b>Winner of the London Encode 24th-27th October competition for 'Best Cryptography for society'</b></i><br><br></p>
+    
+    <a href="https://github.com/Kevin-CNC/Seriala-Auto-Json-serialiser"><b>Seriala - Automatic Json Serialiser</b></a>
+    <p><i>Custom-Made API tool that serialises JSON data into classes; Supports 4 Languages (Python, C#, Java and Javascript) & 3 Case-Types too! (Snake Case, Pascal Case & Camel Case)</i><br><br></p>
+
+    <a href="https://github.com/Kevin-CNC/Portafolio"><b>My portafolio page</b></a>
+    <p><i>I've revamped my old portafolio website, making it more appealing to the eye!</i><br><br></p>
+    <p id="light-text"><i>p.s: Click outside of the dashboard to close it!</i></p>
+  </div>
+
+  <div class="dashboard" id="showContactsboard">
+    <h2>Contact me! 📧</h2>
+    <p><b>If you wanna contact me for business-related matters, please feel free to do so through:</b><br><br></p>
+    <a href="mailto:kevincncaplescu@gmail.com"><b>My work email: kevincncaplescu@gmail.com</b><br></a>
+    <a href="www.linkedin.com/in/kevin-caplescu"><b>Official LinkedIn profile</b><br><br></a>
+
+    <p><b>Feel also free to download my CV if you wish:</b><br></p>
+    <a style="font-size:25px" href="KevinCaplescuCV.pdf" download="KevinCaplescuCV.pdf"><u>Kevin Caplescu's CV📄 (15/12/2024)</u><br><br><a></a>
+    <p id="light-text"><i>p.s: Click outside of the dashboard to close it!</i></p>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
