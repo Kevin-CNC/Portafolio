@@ -1,72 +1,158 @@
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Slight upward movement */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('Background.png');
-    background-repeat: repeat;
-    background-size: auto;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, rgb(12, 12, 12), rgb(41, 41, 41));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-items: center;
+  }
+
+#main-title{
+    align-self: center;
+    text-align: center;
 }
 
-.bg-overlay {
+#showAboutMe, #showSkills, #showProjects, #showContacts {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(240, 248, 255, 0);
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0); /* Button background */
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    scale: 1.8;
+  }
+  
+#showAboutMe::before, #showSkills::before, #showProjects::before, #showContacts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Initial glowing color */
+    border-radius: 5px; /* Rounded border */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: glowing-border 3s linear infinite;
+    pointer-events: none; /* Ensures the border is not clickable */
+}
+
+@keyframes glowing-border {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(253, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(233, 233, 233, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+#showAboutMe:hover, #showSkills:hover, #showProjects:hover, #showContacts:hover {
+    background: rgba(34, 34, 34, 0.87); /* Slightly changes the background on hover */
+    border-color: azure;
+    transition: .75 ease-in-out;
+}
+  
+#light-text{
+    color: rgba(240, 255, 255, 0.171);
+}
+
+.dashboard {
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 80%;
+    max-width: 600px;
+    background-image: linear-gradient(to bottom right, rgb(12, 12, 12), rgb(41, 41, 41));
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-width: 5px;
+    border-color: aliceblue;
+    border-radius: 10px;
+    padding: 2rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.dashboard.visible {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(132, 194, 171, 0.8); 
-    pointer-events: none;
-    width: 100vw;
-    height: 100vh;
-    z-index: -5; 
-    transition: background-color 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
 }
 
-h1, p{
-    color: #ffffff;
-}
-
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-    text-align: center;
+.overlay.active {
+    display: block;
 }
 
 
-.text-box {
-    animation: fadeIn 1.5s ease-in-out;
-    opacity: 0;
-    animation-fill-mode: forwards;
-    background-color: #4a7267; 
+.typew {
     color: white;
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: 25px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-    margin: 1.5rem 0;
-    z-index: 2;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgba(233, 232, 230, 0); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.1s steps(40, end) forwards, /* Add 'forwards' to retain final state */
+        blink-caret 3.5s step-end; /* Blink ends when typing finishes */
 }
 
-.text-box:hover{
-    background-color: #30959c; 
-}
-
-a:link, a:visited{
-    color:#5edfff;
-}
-
-h1, h2 {
+.typew2 {
     color: white;
-    font-weight: bold;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgba(233, 232, 230, 0); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing2 .85s steps(40, end) forwards, /* Add 'forwards' to retain final state */
+        blink-caret2 1.5s step-end; /* Blink ends when typing finishes */
 }
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes typing2 {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    100% { border-color: rgb(255, 255, 255); }
+}
+
+@keyframes blink-caret2 {
+    from, to { border-color: transparent }
+    100% { border-color: rgb(255, 255, 255); }
+}
+
