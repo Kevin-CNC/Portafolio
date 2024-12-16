@@ -151,6 +151,7 @@ body {
 
 .typew2 {
     color: white;
+    font-size: small;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid rgba(233, 232, 230, 0); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
